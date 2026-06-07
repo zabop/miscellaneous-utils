@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p>Input: [[x,y],[x,y],...]. Out: WKT.</p>
+<input id="input">
+<button onclick="convert()">Convert</button>
+<pre id="output"></pre>
+<script>
+function convert() {
+  var coords = JSON.parse(document.getElementById('input').value);
+  var parts = coords.map(function(p) { return p[0] + ' ' + p[1]; });
+  document.getElementById('output').textContent = 'POLYGON((' + parts.join(', ') + '))';
+}
+</script>
+</body>
+</html>
